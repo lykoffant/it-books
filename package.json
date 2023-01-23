@@ -1,0 +1,66 @@
+{
+  "name": "it-books",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Catalog of IT books",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "concurrently -g 'npm run lint:es' 'npm run lint:style'",
+    "lint:fix": "concurrently -g 'npm run lint:es:fix' 'npm run lint:style:fix'",
+    "lint:es": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint:es:fix": "npm run lint:es -- --fix",
+    "lint:style": "stylelint src/**/*.{vue,scss}",
+    "lint:style:fix": "npm run lint:style -- --fix",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lykoffant/it-books.git"
+  },
+  "keywords": [
+    "it-books",
+    "pet-project",
+    "single-page-app",
+    "vue",
+    "vue-router"
+  ],
+  "author": "Anton Lykov",
+  "bugs": {
+    "url": "https://github.com/lykoffant/it-books/issues"
+  },
+  "dependencies": {
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@types/node": "^18.11.12",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/tsconfig": "^0.1.3",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "sass": "^1.57.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-clean-order": "^2.3.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "typescript": "~4.7.4",
+    "vite": "^4.0.0",
+    "vite-plugin-stylelint": "^4.1.6",
+    "vue-tsc": "^1.0.12"
+  }
+}
